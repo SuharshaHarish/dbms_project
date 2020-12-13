@@ -1,0 +1,40 @@
+{% extends 'dbms_app/base.html' %} {% load static %}
+
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/log.css' %}" />
+<div class="register_container">
+
+  <form method="post">
+    <div class="reg-form">
+      <h1>Register</h1>
+      {% csrf_token %}
+      
+      {% for field in form1 %}
+      <div class="field">
+        <label for="{{ field.id_for_label }}" class="label">{{ field.name }}</label>
+        {{ field }}
+        
+      </div>
+      {% endfor %}
+
+      {% for field in form2 %}
+      <div class="field">
+        <label for="{{ field.id_for_label }}" class="label">{{ field.name }}</label>
+        {{ field }}
+        
+      </div>
+      {% endfor %}
+      <!-- {{form.as_p}} -->
+      <button type="submit" id="login_submit">Submit</button>
+    </div>
+  </form>
+</div>
+<script>
+  document.getElementsByClassName("label")[0].innerHTML = "Username:"
+  document.getElementsByClassName("label")[1].innerHTML = "Password:"
+  document.getElementsByClassName("label")[2].innerHTML = "Password Confirmation:"
+  document.getElementsByClassName("label")[3].innerHTML = "Name:"
+  document.getElementsByClassName("label")[4].innerHTML = "Address:"
+
+</script>
+{% endblock %}

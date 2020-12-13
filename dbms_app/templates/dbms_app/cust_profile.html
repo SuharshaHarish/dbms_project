@@ -1,0 +1,85 @@
+{% extends 'dbms_app/base.html' %} {% load static %} 
+{% block head %} 
+<link
+rel="stylesheet"
+type="text/css"
+href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<link rel="stylesheet" href="{% static 'css/cart.css' %}" />
+
+{% endblock %}
+
+{% block body %}
+
+
+
+    <div class="container">
+      <h1>Your Orders</h1>
+      
+      <div class="cart">
+        
+        <div class="products">
+            {% for product in products%}
+            
+          <div class="product">
+            {% if product.title == "Mercedes Benz"%}
+            <img
+              src="https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt=""
+            />            
+            {% endif %}
+            {% if product.title == "Harley Davidson"%}
+            <img
+              src="https://images.pexels.com/photos/2611686/pexels-photo-2611686.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt=""
+            />            
+            {% endif %}
+            {% if product.title == "Porsche"%}
+            <img
+              src="https://images.hdqwalls.com/download/porsche-911-turbo-s-exclusive-series-2017-sm-1366x768.jpg"
+              alt=""
+            />            
+            {% endif %}
+            {% if product.title == "Royal Enfield"%}
+            <img
+              src="https://wallpapercave.com/wp/wp4221540.jpg"
+              alt=""
+            />            
+            {% endif %}
+            {% if product.title == "Lamborghini"%}
+            <img
+              src="https://images.pexels.com/photos/2127733/pexels-photo-2127733.jpeg?cs=srgb&dl=pexels-adrian-dorobantu-2127733.jpg&fm=jpg"
+              alt=""
+            />            
+            {% endif %}
+            <div class="product-info">
+              <h3 class="product-name">{{product.title}}</h3>
+              <h4 class="product-price">$ {{product.price}}</h4>
+              <h4 class="product-address">{{customer.address}}</h4>
+              <p class="product-quantity">Qty : <input value="{{product.orderid.qty}}" name="" /></p>
+              <!-- <p class="product-remove">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+                <span class="remove">Remove</span>
+              </p> -->
+            </div>
+          </div> 
+          {% endfor %} 
+        </div>     
+        
+        
+        <div class="cart-total">
+          <h2>Billing Address</h2>
+          <p class="tot-margin">
+            <span>Name</span>
+            <span>{{customer.name}}</span>
+          </p>
+          <p>
+            <span>Address</span>
+            <span>{{customer.address}}</span>
+          </p>
+          <!-- <a href="#">Proceed to Checkout</a> -->
+        </div>
+    </div>
+    </div>
+    
+{% endblock%}

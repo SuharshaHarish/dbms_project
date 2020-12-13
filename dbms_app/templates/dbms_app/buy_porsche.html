@@ -1,0 +1,56 @@
+{% extends 'dbms_app/base.html' %} {% load static %} {% block body %}
+
+<link rel="stylesheet" href="{% static 'css/buy.css' %}" />
+<h1>Automobile Details</h1>
+<div class="wrapper">
+  <div class="left">
+    <img
+      src="https://images.hdqwalls.com/download/porsche-911-turbo-s-exclusive-series-2017-sm-1366x768.jpg"
+      alt="user"
+    />
+    <h4>Porsche</h4>
+    <p>Their Turbo engines are special for reasons best known to them</p>
+  </div>
+  <div class="right">
+    <div class="info">
+      <h3>Information</h3>
+      <div class="info_data">
+        <div class="data">
+          <h4>Email</h4>
+          <p>yuva@gmail.com</p>
+        </div>
+        <div class="data">
+          <h4>Phone</h4>
+          <p>003-413-898761</p>
+        </div>
+      </div>
+    </div>
+<form method="post">
+    <!-- <label for="quantity">Quantity</label>
+    <input id="quantity" type="text" name="quantity"  /> -->
+    {% csrf_token %}
+    <!-- <button type="submit" id="login_submit">Buy</button> -->
+ 
+
+  <div class="buttons">
+    <ul class="butns">
+      <li>
+        <h3>QTY</h3>
+        <div class="select">
+          <select name="quantity" id="slct">
+            <option selected disabled>Choose an option</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </li>
+      <li>
+        <button class="button" type="submit" id="login_submit"><span>Buy </span></button>
+      </li>
+    </ul>
+  </div>
+</form>  
+</div>
+</div>
+{% endblock %}

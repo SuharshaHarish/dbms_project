@@ -1,0 +1,19 @@
+{% extends 'dbms_app/base.html' %} {% load static %} {% block body %}
+<link rel="stylesheet" href="{% static 'css/log.css' %}" />
+
+<div>
+    <h1>Automobiles to be assembled</h1>  
+    {% for assemble in assembles%}
+    <div>
+        <p>Name : {{assemble.productid.title}} 
+        Customer : {{assemble.productid.orderid.customerid.name}}
+    Quantity : {{assemble.productid.orderid.qty}}</p>        
+    </div>
+   
+    {% endfor %}
+    <div>
+        <h4>Employee Details</h4>
+        <p>Name : {{employee.name}} Address : {{employee.address}}</p>
+    </div>
+</div>
+{% endblock%}

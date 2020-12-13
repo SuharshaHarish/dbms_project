@@ -1,0 +1,21 @@
+{% extends 'dbms_app/base.html' %} {% load static %} {% block body %}
+<link rel="stylesheet" href="{% static 'css/log.css' %}" />
+<div class="my_container">
+  <div>
+    <div class="logout_head">
+      <h1>Your Order has been placed</h1>
+    </div>
+    <div class="logoutwrapper">
+      <div class="loghome">
+        <p>Go back to home?</p>
+        <a href="{% url 'dbms_app:home' %}"><button type="submit" id="login_submit">Home</button></a>
+        
+      </div>
+      <div class="loglogin">
+        <p>Check your orders?</p>
+        <a href="{% url 'dbms_app:cust_profile' %}"><button type="submit" id="login_submit">Your Orders</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock%}

@@ -1,0 +1,18 @@
+{% extends 'dbms_app/base.html' %} {% load static %} {% block body %}
+<link rel="stylesheet" href="{% static 'css/log.css' %}" />
+<div>
+    <h1>Automobile parts to be Supplier</h1>  
+    {% for productpart in productparts%}
+    <div>
+        <p>Name : {{productpart.partid.name}} 
+        Automobile : {{productpart.productid.title}}
+    </p>        
+    </div>
+   
+    {% endfor %}
+    <div>
+        <h4>Supplier Details</h4>
+        <p>Name : {{supplier.name}} Address : {{supplier.address}}</p>
+    </div>
+</div>
+{% endblock%}

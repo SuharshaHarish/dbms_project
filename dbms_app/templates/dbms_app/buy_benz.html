@@ -1,0 +1,56 @@
+{% extends 'dbms_app/base.html' %} {% load static %} {% block body %}
+
+<link rel="stylesheet" href="{% static 'css/buy.css' %}" />
+<h1>Automobile Details</h1>
+    <div class="wrapper">
+      <div class="left">
+        <img
+          src="https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          alt="user"
+        />
+        <h4>Mercedes Benz</h4>
+        <p>Experience the class of Mercedes with 4L-V8 Twin-turbo engine</p>
+      </div>
+      <div class="right">
+        <div class="info">
+          <h3>Information</h3>
+          <div class="info_data">
+            <div class="data">
+              <h4>Email</h4>
+              <p>kaushik@gmail.com</p>
+            </div>
+            <div class="data">
+              <h4>Phone</h4>
+              <p>002-313-998761</p>
+            </div>
+          </div>
+        </div>
+<form method="post">
+    <!-- <label for="quantity">Quantity</label>
+    <input id="quantity" type="text" name="quantity"  /> -->
+    {% csrf_token %}
+    <!-- <button type="submit" id="login_submit">Buy</button> -->
+ 
+
+  <div class="buttons">
+    <ul class="butns">
+      <li>
+        <h3>QTY</h3>
+        <div class="select">
+          <select name="quantity" id="slct">
+            <option selected disabled>Choose an option</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </li>
+      <li>
+        <button class="button" type="submit" id="login_submit"><span>Buy </span></button>
+      </li>
+    </ul>
+  </div>
+</form>  
+</div>
+</div>
+{% endblock %}
